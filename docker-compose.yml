@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    volumes:
+      - index_data:/index_data
+    ports:
+      - 8000:8000
+  
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  dev:
+    image: ruby:3.2.2
+    links:
+      - chroma
+      - mongodb
+    command: echo 'dev environment started'
+
+volumes:
+  index_data:
+  mongodb_data:

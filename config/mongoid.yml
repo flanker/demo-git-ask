@@ -1,0 +1,12 @@
+defaults: &defaults
+  hosts:
+    - localhost:27017
+
+development:
+  clients:
+    default:
+      <<: *defaults
+      database: development
+      options:
+        user:
+        password:
