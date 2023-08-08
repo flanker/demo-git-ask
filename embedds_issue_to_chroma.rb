@@ -2,10 +2,10 @@ require './init'
 
 openai = OpenAI::Client.new(access_token: OPENAI_API_KEY)
 
-Issue.first(1000).each do |issue|
+Issue.each do |issue|
   print '.'
 
-  document = "Title: #{issue.title}. Description: #{issue.description}"
+  document = "标题: #{issue.title}. 内容: #{issue.description}"
 
   begin
     response = openai.embeddings(

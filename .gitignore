@@ -1,4 +1,6 @@
 .env
 .idea/
 .byebug_history
+output/
+tmp/
 

@@ -1,6 +1,7 @@
 require './init'
 
-feature = '身份证字段'
+feature = '门户'
+puts "#{feature} 的 check list"
 
 openai = OpenAI::Client.new(access_token: OPENAI_API_KEY)
 

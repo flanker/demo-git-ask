@@ -1,6 +1,8 @@
 require './init'
 
-question = '什么情况下会导致表单无法提交'
+question = '如何在工作台上查看我的数据'
+
+puts question
 
 openai = OpenAI::Client.new(access_token: OPENAI_API_KEY)
 
@@ -27,7 +29,7 @@ prompt = <<~PROMPT
 
   #{full_context.first(10_000)}
 
-  Checklist:
+  回答：
 PROMPT
 
 response = openai.chat(
